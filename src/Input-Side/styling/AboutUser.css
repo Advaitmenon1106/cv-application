@@ -1,0 +1,23 @@
+label {
+  display: inline-block;
+  width: min(200px, 50vw);
+}
+
+label,
+input {
+  margin-top: 2vh;
+  font-size: 1.3em;
+}
+
+hr.line-break {
+  margin-top: 20%;
+  border-width: 2px;
+  border-color: black;
+  width: 100%;
+}
+
+#contact-details {
+  display: inline-block;
+  max-width: 50vw;
+  
+}
