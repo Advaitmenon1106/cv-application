@@ -1,32 +1,32 @@
 import '../styling/AboutUser.css'
 
-export function ApplicantDetails({ onChangeEmail = null, onChangeGH = null, onChangeLinkedIn = null, onChangePhoneNo = null, onChangeName = null }) {
+export function ApplicantDetails({onChangeFn = null} /*{ onChangeEmail = null, onChangeGH = null, onChangeLinkedIn = null, onChangePhoneNo = null, onChangeName = null }*/) {
     return (
         <>
             <div id='contact-details'>
 
                 <div>
                     <label>Email ID: </label>
-                    <input onChange={onChangeEmail} />
+                    <input name='email' onChange={onChangeFn} /*onChange={onChangeEmail}*/ />
                 </div>
 
                 <div>
                     <label>GitHub Account: </label>
-                    <input onChange={onChangeGH} />
+                    <input name='gh' onChange={onChangeFn} /*onChange={onChangeGH}*/ />
                 </div>
 
                 <div>
                     <label>LinkedIn: </label>
-                    <input onChange={onChangeLinkedIn} />
+                    <input name='linkedin' onChange={onChangeFn} /*onChange={onChangeLinkedIn}*/ />
                 </div>
 
                 <div>
                     <label>Phone Number: </label>
-                    <input onChange={onChangePhoneNo} />
+                    <input name='phoneNo' onChange={onChangeFn} /*onChange={onChangePhoneNo}*/ />
                 </div>
 
                 <label>Full Name: </label>
-                <input onChange={onChangeName} />
+                <input name='fullname' onChange={onChangeFn} /*onChange={onChangeName}*/ />
 
             </div>
             {/* <hr className='line-break'></hr> */}
