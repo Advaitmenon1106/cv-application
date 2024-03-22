@@ -3,3 +3,14 @@
   padding: 0;
   user-select: none;
 }
+
+@media print {
+  #input-side-td {
+    visibility: hidden;
+  }
+  .a4-cv {
+    visibility: visible;
+    position: relative;
+    right: 20vw;
+  }
+}
