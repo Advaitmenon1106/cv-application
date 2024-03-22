@@ -1,0 +1,14 @@
+.small-font-details {
+  padding-top: 10vh;
+  font-size: 1.5em;
+}
+
+#applicant-name {
+  font-size: 2em;
+  margin-top: 5%;
+  border-bottom: 5px solid black;
+}
+
+#phone-number::-webkit-inner-spin-button {
+  appearance: none;
+}
