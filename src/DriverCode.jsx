@@ -42,14 +42,11 @@ export function Consortium() {
     }
 
     const addQualification = (event, key) => {
-        let newQualification = { ...qual };
-        console.log('before');
-        console.log(newQualification);
-        newQualification[key] = event.target.value;
-        console.log('after');
-        setQual(newQualification);
-        console.log(qual);
-    }
+        setQual((prevQual) => ({
+          ...prevQual,
+          [key]: event.target.value,
+        }));
+      };
 
     return (
         <>
