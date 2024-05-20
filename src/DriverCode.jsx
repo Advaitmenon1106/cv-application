@@ -33,20 +33,29 @@ export function Consortium() {
 
     const [inputs, setInputs] = useState([]);
     const [qual, setQual] = useState({})
+    const [date, setDate] = useState({})
 
 
     function addInputField() {
         let key = uuid();
-        setInputs([...inputs, <div key={key}><input onChange={(event) => addQualification(event, key)} /></div>]);
-        // setQual({...qual, key:<div key={key} className='education'></div>}) // This does not work but I might need to trigger a render here 
+        setInputs([...inputs, <div style={{ display: 'flex' }} key={key}><input onChange={(event) => addQualification(event, key)} />
+            <input type="date" onChange={(event) => addDate(event, key)} />
+        </div>]);
     }
 
     const addQualification = (event, key) => {
         setQual((prevQual) => ({
-          ...prevQual,
-          [key]: event.target.value,
+            ...prevQual,
+            [key]: event.target.value,
         }));
-      };
+    };
+
+    const addDate = (event, key) => {
+        setDate((prevDates) => ({
+            ...prevDates,
+            [key]: event.target.value,
+        }))
+    }
 
     return (
         <>
@@ -62,7 +71,7 @@ export function Consortium() {
                             <div className="a4-cv">
                                 <ApplicantDetailOutputs value={value} />
                                 <SkillField skills={skill} />
-                                <ApplicantQualifications qualifications={qual} />
+                                <ApplicantQualifications qualifications={qual} dates={date} />
                             </div>
                         </td>
                     </tr>
