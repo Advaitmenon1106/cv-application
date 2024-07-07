@@ -20,3 +20,16 @@
   margin-top: 5vh;
   font-size: 1.9em;
 }
+
+@media print {
+  #input-side-td {
+    display: none;
+  }
+  .a4-cv {
+    visibility: visible;
+    max-width: 100vw;
+    height: auto;
+    margin: 0;
+    border: 0;
+  }
+}
