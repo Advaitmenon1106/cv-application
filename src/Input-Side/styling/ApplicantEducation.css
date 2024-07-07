@@ -4,3 +4,7 @@
   padding-right: 0.5em;
   margin-top: 5%;
 }
+
+.ed-field {
+  font-size: min(0.8em, 1.2em)
+}
