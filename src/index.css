@@ -6,11 +6,11 @@
 
 @media print {
   #input-side-td {
-    visibility: hidden;
+    display: none;
   }
-  .a4-cv {
-    visibility: visible;
-    position: relative;
-    right: 20vw;
+
+  @page {
+    size: auto;
+    margin: 0mm;
   }
 }
