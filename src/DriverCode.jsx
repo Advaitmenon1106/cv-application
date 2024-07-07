@@ -33,13 +33,15 @@ export function Consortium() {
 
     const [inputs, setInputs] = useState([]);
     const [qual, setQual] = useState({})
-    const [date, setDate] = useState({})
+    const [startDate, setStartDate] = useState({})
+    const [endDate, setEndDate] = useState({})
 
 
     function addInputField() {
         let key = uuid();
         setInputs([...inputs, <div style={{ display: 'flex' }} key={key}><input onChange={(event) => addQualification(event, key)} />
-            <input type="date" onChange={(event) => addDate(event, key)} />
+            <input type="date" onChange={(event) => addStartDate(event, key)} />
+            <input type="date" onChange={(event) => addEndDate(event, key)} />
         </div>]);
     }
 
@@ -50,8 +52,15 @@ export function Consortium() {
         }));
     };
 
-    const addDate = (event, key) => {
-        setDate((prevDates) => ({
+    const addStartDate = (event, key) => {
+        setStartDate((prevDates) => ({
+            ...prevDates,
+            [key]: event.target.value,
+        }))
+    }
+
+    const addEndDate = (event, key) => {
+        setEndDate((prevDates) => ({
             ...prevDates,
             [key]: event.target.value,
         }))
@@ -71,7 +80,7 @@ export function Consortium() {
                             <div className="a4-cv">
                                 <ApplicantDetailOutputs value={value} />
                                 <SkillField skills={skill} />
-                                <ApplicantQualifications qualifications={qual} dates={date} />
+                                <ApplicantQualifications qualifications={qual} startDates={startDate} endDates={endDate}/>
                             </div>
                         </td>
                     </tr>
